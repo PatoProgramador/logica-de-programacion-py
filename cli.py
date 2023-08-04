@@ -32,7 +32,7 @@ def exer1(ctx, a,b,c,d):
 @click.pass_context
 def exer1_2(ctx, a,b,c,d,e):
     if not a or not b or not c or not d or not e:
-        ctx.fail('Las cuatro variables(a,b,c y d) son requeridas')
+        ctx.fail('Las cinco variables(a,b,c,d y e) son requeridas')
     else:
         promedio = exercises_handler.exercise_1_2(a,b,c,d,e)
         print('Con las variables ', a, ',' ,b, ',',c, ',',d, ',',e, ',' , 'tenemos que el promedio es: ', promedio)
