@@ -25,3 +25,8 @@ def integersMajorAndMinor(a,b,c,d):
     elif d > a and d > b and d >= c :
         mayor = d
     return menor, mayor
+
+def averageBetweenFloat(a,b,c,d,e) :
+   suma = a + b + c + d + e
+   promedio = suma / 5
+   return promedio
