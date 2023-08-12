@@ -1,4 +1,4 @@
-import exercises_handler
+import exercises.exercises_handler as exercises_handler
 import click
 
 @click.group()
@@ -36,6 +36,17 @@ def exer1_2(ctx, a,b,c,d,e):
     else:
         promedio = exercises_handler.exercise_1_2(a,b,c,d,e)
         print('Con las variables ', a, ',' ,b, ',',c, ',',d, ',',e, ',' , 'tenemos que el promedio es: ', promedio)
+
+# Ejercico 2, busqueda del mayor y menor con un ciclo for
+@cli.command()
+@click.argument('array', nargs=-1, type=int, required=True, metavar='arr')
+@click.pass_context
+def exer2(ctx, array):
+    if len(array) < 2:
+        ctx.fail('No existe mayor o menor puesto que solo hay un valor')
+    else:
+        major = exercises_handler.exercise_2(array)
+        print(f'El número mayor es: {major}')
 
 if __name__ == '__main__':
     cli()
