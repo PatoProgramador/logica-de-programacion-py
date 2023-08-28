@@ -65,5 +65,25 @@ def exer2_1(ctx, array):
         print(f'Hay {len(pairs)} números pares los cuales son {pairs}')
         print(f'Hay {len(odd)} números impares los cuales son {odd}')
 
+# Ejercicio 3, sumatoria y multiplicacion de cada indice para devolverlos en un array
+@cli.command()
+@click.option('--count', type=int, required=True, help='Longitud de los arrays')
+@click.pass_context
+def exer3(ctx, count):
+    if count == 0:
+        ctx.fail('Debes pasar una longitud valida para la operación')
+    array1 = []
+    array2 = []
+
+    for i in range(0, count):
+        value1 = click.prompt(f'Ingrese el valor {i + 1} del primer array', type= int)
+        value2 = click.prompt(f'Ingrese el valor {i + 1} del segundo array', type=int)
+        array1.append(value1)
+        array2.append(value2)
+    sum, multi = exercises_handler.exercise_3(array1, array2)
+    print(f'Con los arrays: {array1}, {array2} tenemos: ')
+    print(f'La suma de cada número es: {sum}')
+    print(f'La multiplicación de cada número es: {multi}')
+
 if __name__ == '__main__':
     cli()
