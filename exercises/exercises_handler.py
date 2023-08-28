@@ -1,5 +1,6 @@
 from exercises.majorandminor.logical_operatos import integersMajorAndMinor, averageBetweenFloat
 from exercises.majorandminor.for_cicle import forSearchingMajor
+from exercises.evenOdd.arr_for import forSearchingEvenOdd
 
 def exercise_1(a,b,c,d):
     menor, mayor = integersMajorAndMinor(a,b,c,d)
@@ -12,3 +13,7 @@ def exercise_1_2(a,b,c,d,e):
 def exercise_2(arr):
     major = forSearchingMajor(arr)
     return major
+
+def exercise_2_1(arr):
+    pair, odd = forSearchingEvenOdd(arr)
+    return pair, odd

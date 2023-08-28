@@ -48,5 +48,22 @@ def exer2(ctx, array):
         major = exercises_handler.exercise_2(array)
         print(f'El número mayor es: {major}')
 
+# Ejercico 2.1, busqueda de numeros pares e impares
+@cli.command()
+@click.argument('array', nargs=-1, type=int, required=True, metavar='arr')
+@click.pass_context
+def exer2_1(ctx, array):
+    if len(array) == 1:
+        if array[0] % 2 == 0 :
+            print(f'El unico número es par, siendo este: {array[0]}')
+        else :
+            print(f'El unico número es impar, siendo este: {array[0]}')
+    elif len(array) == 0:
+        ctx.fail('Debes pasar los números para hacer la búsqueda')
+    else:
+        pairs, odd = exercises_handler.exercise_2_1(array)
+        print(f'Hay {len(pairs)} números pares los cuales son {pairs}')
+        print(f'Hay {len(odd)} números impares los cuales son {odd}')
+
 if __name__ == '__main__':
     cli()
